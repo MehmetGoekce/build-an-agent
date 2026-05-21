@@ -1,0 +1,122 @@
+[
+  {
+    "product_id": "TRL-001",
+    "name": "Alpine Trail 30L Backpack",
+    "category": "Backpacks",
+    "price_chf": 129.0,
+    "tags": ["hiking", "daypack", "lightweight", "ventilated"],
+    "in_stock": true,
+    "rating": 4.6,
+    "description": "A 30-litre daypack for fast, light hikes. Ventilated back panel, rain cover included, 980 g."
+  },
+  {
+    "product_id": "TRL-002",
+    "name": "Summit Pro 65L Backpack",
+    "category": "Backpacks",
+    "price_chf": 249.0,
+    "tags": ["trekking", "multi-day", "adjustable", "expedition"],
+    "in_stock": true,
+    "rating": 4.8,
+    "description": "A 65-litre trekking pack for multi-day tours. Adjustable harness, hip-belt pockets, 1.9 kg."
+  },
+  {
+    "product_id": "JKT-001",
+    "name": "Stormshield Hardshell Jacket",
+    "category": "Jackets",
+    "price_chf": 289.0,
+    "tags": ["waterproof", "windproof", "shell", "rain"],
+    "in_stock": true,
+    "rating": 4.7,
+    "description": "A 3-layer waterproof hardshell for serious weather. Fully taped seams, helmet-compatible hood."
+  },
+  {
+    "product_id": "JKT-002",
+    "name": "Featherlight Down Jacket",
+    "category": "Jackets",
+    "price_chf": 199.0,
+    "tags": ["warm", "insulated", "packable", "winter"],
+    "in_stock": false,
+    "rating": 4.5,
+    "description": "A packable 800-fill down jacket for cold, dry conditions. Packs into its own pocket, 320 g."
+  },
+  {
+    "product_id": "JKT-003",
+    "name": "Trailbreeze Summer Tee",
+    "category": "Shirts",
+    "price_chf": 39.0,
+    "tags": ["summer", "lightweight", "breathable", "quick-dry"],
+    "in_stock": true,
+    "rating": 4.3,
+    "description": "A quick-dry technical tee for warm-weather hikes. Merino blend, odour-resistant."
+  },
+  {
+    "product_id": "FTW-001",
+    "name": "Granite GTX Hiking Boot",
+    "category": "Footwear",
+    "price_chf": 219.0,
+    "tags": ["waterproof", "hiking", "ankle-support", "boot"],
+    "in_stock": true,
+    "rating": 4.6,
+    "description": "A waterproof mid-cut hiking boot with a grippy Vibram sole. Solid ankle support for rough terrain."
+  },
+  {
+    "product_id": "FTW-002",
+    "name": "Rivercross Trail Runner",
+    "category": "Footwear",
+    "price_chf": 149.0,
+    "tags": ["lightweight", "trail-running", "breathable", "shoe"],
+    "in_stock": true,
+    "rating": 4.4,
+    "description": "A lightweight trail-running shoe with fast drainage for stream crossings. 280 g per shoe."
+  },
+  {
+    "product_id": "SLP-001",
+    "name": "Nightfall -5C Sleeping Bag",
+    "category": "Sleeping",
+    "price_chf": 179.0,
+    "tags": ["warm", "3-season", "down", "camping"],
+    "in_stock": true,
+    "rating": 4.5,
+    "description": "A 3-season down sleeping bag rated to -5 C comfort. Mummy cut, 1.1 kg, compresses small."
+  },
+  {
+    "product_id": "TNT-001",
+    "name": "Skyridge 2P Tent",
+    "category": "Tents",
+    "price_chf": 359.0,
+    "tags": ["2-person", "freestanding", "lightweight", "camping"],
+    "in_stock": true,
+    "rating": 4.7,
+    "description": "A freestanding 2-person tent, 2.2 kg packed. Two doors, two vestibules, fast pitch."
+  },
+  {
+    "product_id": "NAV-001",
+    "name": "Pathfinder GPS Watch",
+    "category": "Electronics",
+    "price_chf": 329.0,
+    "tags": ["gps", "navigation", "battery", "watch"],
+    "in_stock": true,
+    "rating": 4.4,
+    "description": "A GPS watch with topographic maps and a 40-hour tracking battery. Barometric altimeter."
+  },
+  {
+    "product_id": "HYD-001",
+    "name": "Glacier 1L Insulated Bottle",
+    "category": "Hydration",
+    "price_chf": 35.0,
+    "tags": ["insulated", "bottle", "stainless-steel", "summer"],
+    "in_stock": true,
+    "rating": 4.8,
+    "description": "A 1-litre vacuum-insulated stainless bottle. Keeps drinks cold for 24 h, hot for 12 h."
+  },
+  {
+    "product_id": "LGT-001",
+    "name": "Beacon 400 Headlamp",
+    "category": "Electronics",
+    "price_chf": 49.0,
+    "tags": ["headlamp", "rechargeable", "lightweight", "camping"],
+    "in_stock": true,
+    "rating": 4.5,
+    "description": "A 400-lumen rechargeable headlamp, 78 g. Red night mode and a 60-hour low setting."
+  }
+]

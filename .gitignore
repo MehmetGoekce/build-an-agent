@@ -1,0 +1,17 @@
+# Secrets — never commit your API key
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Tutorial build artefacts
+.faiss_index/
+.tmp/

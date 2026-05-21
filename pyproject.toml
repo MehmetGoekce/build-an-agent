@@ -1,0 +1,26 @@
+[project]
+name = "build-an-agent"
+version = "0.1.0"
+description = "Build an AI agent on your laptop — no cloud account, no GPU. A brev-free rebuild of NVIDIA's agent workshop."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+    # Part 1 — the raw agent loop
+    "openai>=1.30",
+    # Part 1 — the LangGraph agent (LangChain / LangGraph v1)
+    "langchain>=1.0,<2",
+    "langchain-openai>=1.0,<2",
+    "langgraph>=1.0,<2",
+    # Part 2 — retrieval
+    "faiss-cpu>=1.9",
+    "numpy>=1.26",
+    # Part 3 — evaluation
+    "ragas>=0.2,<0.3",
+    # shared
+    "python-dotenv>=1.0",
+    "jupyterlab>=4.2",
+]
+
+[tool.uv]
+package = false
