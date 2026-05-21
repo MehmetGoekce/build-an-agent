@@ -75,11 +75,38 @@ def _extra_body() -> dict[str, object]:
 EXTRA_BODY: dict[str, object] = _extra_body()
 
 
+def embed_extra_body(input_type: str) -> dict[str, object]:
+    """Provider-specific options for an embedding request (Part 2 onwards).
+
+    NVIDIA's nv-embedqa models are *asymmetric* retrieval models: a search
+    query and a stored document are embedded differently, and the model has
+    to be told which is which. Pass "passage" when you embed a catalogue
+    document and "query" when you embed a user's question. Getting this
+    wrong quietly wrecks retrieval accuracy.
+
+    This option is NVIDIA-specific. Point .env at OpenAI / Ollama and it
+    returns {} — their embedding models are symmetric and need no hint, so
+    the tutorial code stays provider-agnostic.
+    """
+    base = os.getenv("EMBED_BASE_URL", os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT))
+    if "nvidia" in base:
+        return {"input_type": input_type, "truncate": "END"}
+    return {}
+
+
 def raw_client() -> OpenAI:
     """A plain OpenAI-SDK client — used by the 'minimal-first' notebooks."""
     from openai import OpenAI
 
     cfg = llm_config()
+    return OpenAI(base_url=cfg["base_url"], api_key=cfg["api_key"])
+
+
+def embed_client() -> OpenAI:
+    """A plain OpenAI-SDK client pointed at the embedding endpoint (Part 2)."""
+    from openai import OpenAI
+
+    cfg = embed_config()
     return OpenAI(base_url=cfg["base_url"], api_key=cfg["api_key"])
 
 
