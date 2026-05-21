@@ -1,3 +1,4 @@
+# pyright: strict
 """
 llm.py — the one place this tutorial talks to a language model.
 

@@ -1,3 +1,4 @@
+# pyright: strict
 """
 Commerce tools for the shopping-assistant agent.
 

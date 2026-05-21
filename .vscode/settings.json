@@ -1,11 +1,11 @@
 {
-  // Use this repo's virtual environment so Pylance resolves imports
-  // (openai, langchain, ...). Without this you get a cascade of false
-  // "unknown type" errors in strict mode.
+  // Pylance resolves imports (openai, langchain, ...) against this repo's
+  // virtual environment instead of flagging them as unknown.
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 
-  // Type-checking strictness lives in pyrightconfig.json (repo root), so
-  // that the editor AND command-line `pyright` use the exact same rules.
-  // Notebooks are excluded there on purpose — see the README note.
+  // Type-checking baseline is "off" (see pyrightconfig.json) so the
+  // teaching notebooks stay free of red squiggles. Real library files opt
+  // back into strict checking with a `# pyright: strict` comment on line 1
+  // — see llm.py and part-1-build-an-agent/tools.py.
   "python.analysis.autoImportCompletions": true
 }

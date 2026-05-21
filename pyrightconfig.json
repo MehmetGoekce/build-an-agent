@@ -1,5 +1,5 @@
 {
-  "typeCheckingMode": "strict",
+  "typeCheckingMode": "off",
   "pythonVersion": "3.10",
   "venvPath": ".",
   "venv": ".venv",
