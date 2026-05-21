@@ -25,7 +25,7 @@
     "category": "Jackets",
     "price_chf": 289.0,
     "tags": ["waterproof", "windproof", "shell", "rain"],
-    "in_stock": true,
+    "in_stock": false,
     "rating": 4.7,
     "description": "A 3-layer waterproof hardshell for serious weather. Fully taped seams, helmet-compatible hood."
   },
@@ -35,7 +35,7 @@
     "category": "Jackets",
     "price_chf": 199.0,
     "tags": ["warm", "insulated", "packable", "winter"],
-    "in_stock": false,
+    "in_stock": true,
     "rating": 4.5,
     "description": "A packable 800-fill down jacket for cold, dry conditions. Packs into its own pocket, 320 g."
   },

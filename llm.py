@@ -47,6 +47,27 @@ def embed_config() -> dict:
     }
 
 
+def _extra_body() -> dict:
+    """Provider-specific request options.
+
+    NVIDIA's Nemotron models are *reasoning* models: by default they spend
+    tokens "thinking" before they answer. That is slower, costs more, and
+    can leave the real answer empty or wrapped in <think> tags. For a
+    tutorial we want direct answers, so we switch reasoning off.
+
+    This option is NVIDIA-specific, so it is only sent to NVIDIA endpoints.
+    Point .env at OpenAI / Ollama / vLLM and this returns {} — the tutorial
+    code stays provider-agnostic.
+    """
+    if "nvidia" in os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT):
+        return {"chat_template_kwargs": {"enable_thinking": False}}
+    return {}
+
+
+# Pass this as `extra_body=EXTRA_BODY` on every chat call (see the notebooks).
+EXTRA_BODY = _extra_body()
+
+
 def raw_client():
     """A plain OpenAI-SDK client — used by the 'minimal-first' notebooks."""
     from openai import OpenAI
@@ -65,6 +86,7 @@ def chat_model(temperature: float = 0.1):
         base_url=cfg["base_url"],
         api_key=cfg["api_key"],
         temperature=temperature,
+        extra_body=EXTRA_BODY,
     )
 
 
@@ -77,6 +99,8 @@ if __name__ == "__main__":
     reply = raw_client().chat.completions.create(
         model=cfg["model"],
         messages=[{"role": "user", "content": "Reply with exactly: connection ok"}],
-        max_tokens=16,
+        max_tokens=64,
+        extra_body=EXTRA_BODY,
     )
-    print(f"Reply    : {reply.choices[0].message.content.strip()}")
+    content = reply.choices[0].message.content
+    print(f"Reply    : {content.strip() if content else '(empty response)'}")
