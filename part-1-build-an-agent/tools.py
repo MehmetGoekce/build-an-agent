@@ -5,15 +5,32 @@ These are plain Python functions. A "tool" is nothing more than a function
 the model is allowed to call — these are deliberately ordinary so you can
 see that for yourself. Both notebooks in this folder import them:
 
-  * 01-raw-agent.ipynb   describes them with a hand-written JSON schema
-  * 02-langgraph-agent.ipynb wraps them with the @tool decorator
+  * 01-raw-agent.ipynb        describes them with a hand-written JSON schema
+  * 02-langgraph-agent.ipynb  wraps them with the @tool decorator
 
 Same functions, two ways of handing them to a model.
 """
 import json
 from pathlib import Path
+from typing import TypedDict
 
-_CATALOG = json.loads((Path(__file__).parent / "products.json").read_text())
+
+class Product(TypedDict):
+    """One row of the product catalogue (see products.json)."""
+
+    product_id: str
+    name: str
+    category: str
+    price_chf: float
+    tags: list[str]
+    in_stock: bool
+    rating: float
+    description: str
+
+
+_CATALOG: list[Product] = json.loads(
+    (Path(__file__).parent / "products.json").read_text()
+)
 
 
 def search_products(query: str) -> str:
@@ -51,7 +68,7 @@ def get_product_details(product_id: str) -> str:
     return json.dumps({"error": f"No product found with id '{product_id}'"})
 
 
-def _matches(product: dict, term: str) -> bool:
+def _matches(product: Product, term: str) -> bool:
     """True if `term` appears anywhere in a product's searchable text."""
     haystack = " ".join(
         [product["name"], product["category"], " ".join(product["tags"])]

@@ -10,8 +10,13 @@ Swap providers by editing .env — never the tutorial code.
 from __future__ import annotations
 
 import os
+from typing import TYPE_CHECKING
 
 from dotenv import load_dotenv
+
+if TYPE_CHECKING:
+    from langchain_openai import ChatOpenAI
+    from openai import OpenAI
 
 load_dotenv()
 
@@ -29,7 +34,7 @@ def _require(name: str) -> str:
     return value
 
 
-def llm_config() -> dict:
+def llm_config() -> dict[str, str]:
     """Return {base_url, api_key, model} for the chat model."""
     return {
         "base_url": os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT),
@@ -38,16 +43,18 @@ def llm_config() -> dict:
     }
 
 
-def embed_config() -> dict:
+def embed_config() -> dict[str, str]:
     """Return {base_url, api_key, model} for the embedding model."""
     return {
-        "base_url": os.getenv("EMBED_BASE_URL", os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT)),
+        "base_url": os.getenv(
+            "EMBED_BASE_URL", os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT)
+        ),
         "api_key": _require("EMBED_API_KEY"),
         "model": os.getenv("EMBED_MODEL", "nvidia/nv-embedqa-e5-v5"),
     }
 
 
-def _extra_body() -> dict:
+def _extra_body() -> dict[str, object]:
     """Provider-specific request options.
 
     NVIDIA's Nemotron models are *reasoning* models: by default they spend
@@ -65,10 +72,10 @@ def _extra_body() -> dict:
 
 
 # Pass this as `extra_body=EXTRA_BODY` on every chat call (see the notebooks).
-EXTRA_BODY = _extra_body()
+EXTRA_BODY: dict[str, object] = _extra_body()
 
 
-def raw_client():
+def raw_client() -> OpenAI:
     """A plain OpenAI-SDK client — used by the 'minimal-first' notebooks."""
     from openai import OpenAI
 
@@ -76,15 +83,16 @@ def raw_client():
     return OpenAI(base_url=cfg["base_url"], api_key=cfg["api_key"])
 
 
-def chat_model(temperature: float = 0.1):
+def chat_model(temperature: float = 0.1) -> ChatOpenAI:
     """A LangChain chat model — used by the LangGraph notebooks."""
     from langchain_openai import ChatOpenAI
+    from pydantic import SecretStr
 
     cfg = llm_config()
     return ChatOpenAI(
         model=cfg["model"],
         base_url=cfg["base_url"],
-        api_key=cfg["api_key"],
+        api_key=SecretStr(cfg["api_key"]),
         temperature=temperature,
         extra_body=EXTRA_BODY,
     )
