@@ -1,0 +1,102 @@
+[
+  {
+    "id": "q01",
+    "question": "I need a warm jacket for cold, dry winter weather.",
+    "expected": "Recommend the Featherlight Down Jacket [JKT-002], CHF 199, in stock — the warm jacket for cold, dry conditions."
+  },
+  {
+    "id": "q02",
+    "question": "What is your best waterproof shell jacket for heavy rain?",
+    "expected": "The Stormshield Hardshell [JKT-001] is the waterproof shell jacket. It is currently OUT OF STOCK, and the answer must say so."
+  },
+  {
+    "id": "q03",
+    "question": "I want a small backpack for day hikes.",
+    "expected": "Recommend the Alpine Trail 30L Backpack [TRL-001], CHF 129."
+  },
+  {
+    "id": "q04",
+    "question": "Which backpack works for a five-day trek?",
+    "expected": "Recommend the Summit Pro 65L Backpack [TRL-002], CHF 249 — sized for multi-day loads."
+  },
+  {
+    "id": "q05",
+    "question": "Do you sell a four-person tent?",
+    "expected": "No. The only tent is the two-person Skyridge 2P [TNT-001]. The answer must not invent a four-person tent; it should say honestly that one is not available."
+  },
+  {
+    "id": "q06",
+    "question": "I need waterproof boots for rough hiking trails.",
+    "expected": "Recommend the Granite GTX Hiking Boot [FTW-001], CHF 219 — waterproof, with ankle support for rough ground."
+  },
+  {
+    "id": "q07",
+    "question": "What is the lightest shoe you have for trail running?",
+    "expected": "Recommend the Rivercross Trail Runner [FTW-002], CHF 149, 280 g per shoe."
+  },
+  {
+    "id": "q08",
+    "question": "What sleeping bag stays warm on near-freezing spring nights?",
+    "expected": "Recommend the Nightfall -5°C Sleeping Bag [SLP-001], CHF 179."
+  },
+  {
+    "id": "q09",
+    "question": "Do you have snowshoes?",
+    "expected": "No. Snowshoes are not in the catalogue. The answer must say so honestly and must not invent a product."
+  },
+  {
+    "id": "q10",
+    "question": "What is the difference between your two backpacks?",
+    "expected": "Compare the Alpine Trail 30L [TRL-001] (day hikes, CHF 129) with the Summit Pro 65L [TRL-002] (multi-day treks, CHF 249)."
+  },
+  {
+    "id": "q11",
+    "question": "I want a winter jacket for under CHF 100.",
+    "expected": "No jacket is under CHF 100 — the cheapest jacket, the Featherlight Down [JKT-002], is CHF 199. The answer should say so honestly instead of forcing an unsuitable product."
+  },
+  {
+    "id": "q12",
+    "question": "Recommend something to help me navigate on the trail.",
+    "expected": "Recommend the Pathfinder GPS Watch [NAV-001], CHF 329."
+  },
+  {
+    "id": "q13",
+    "question": "I need a bottle that keeps drinks cold all day.",
+    "expected": "Recommend the Glacier 1L Insulated Bottle [HYD-001], CHF 35."
+  },
+  {
+    "id": "q14",
+    "question": "What headlamp is good for night hiking?",
+    "expected": "Recommend the Beacon 400 Headlamp [LGT-001], CHF 49."
+  },
+  {
+    "id": "q15",
+    "question": "It will be a hot summer hike — what should I wear?",
+    "expected": "Recommend the Trailbreeze Summer Tee [JKT-003], CHF 39 — breathable for warm weather."
+  },
+  {
+    "id": "q16",
+    "question": "How much does the Featherlight Down Jacket cost?",
+    "expected": "Exactly CHF 199. The price must be stated correctly."
+  },
+  {
+    "id": "q17",
+    "question": "Is the Stormshield Hardshell available right now?",
+    "expected": "No — the Stormshield Hardshell [JKT-001] is out of stock. The answer must clearly say it is unavailable."
+  },
+  {
+    "id": "q18",
+    "question": "I have CHF 250 for a winter jacket. What fits?",
+    "expected": "The Featherlight Down Jacket [JKT-002] at CHF 199 fits the budget. The Stormshield [JKT-001] at CHF 289 is over budget and also out of stock."
+  },
+  {
+    "id": "q19",
+    "question": "What do I need for a two-person camping trip?",
+    "expected": "Recommend the Skyridge 2P Tent [TNT-001], CHF 359; a sleeping bag such as the Nightfall [SLP-001] is a reasonable addition."
+  },
+  {
+    "id": "q20",
+    "question": "Do you sell climbing ropes?",
+    "expected": "No. Climbing ropes are not in the catalogue. The answer must say so honestly and must not invent one."
+  }
+]
