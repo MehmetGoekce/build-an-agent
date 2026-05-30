@@ -9,7 +9,7 @@ The tutorial calls a hosted language model. The default is NVIDIA's free
 tier — generous enough for the whole tutorial.
 
 1. Go to <https://build.nvidia.com> and sign in (a free account).
-2. Pick any model (for example *Nemotron*).
+2. Pick any model (for example **NVIDIA Nemotron™**).
 3. Click **Get API Key**. Copy the key — it starts with `nvapi-`.
 
 > Prefer another provider? Any OpenAI-compatible endpoint works — OpenAI,

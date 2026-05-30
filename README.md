@@ -55,7 +55,7 @@ Full walkthrough in [setup.md](setup.md). Short version:
 
 ## Runs anywhere — that is the point
 
-The default configuration uses NVIDIA's hosted *Nemotron* model: free
+The default configuration uses the hosted **NVIDIA Nemotron™** model: free
 tier, no GPU. But **no tutorial code is provider-specific.** Every model
 call goes through [`llm.py`](llm.py), which speaks the OpenAI
 chat-completions protocol. Point `.env` at OpenAI, a local
