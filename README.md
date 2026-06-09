@@ -8,7 +8,7 @@ normal laptop against a free hosted API. Three short parts take you from
 *"what even is an agent"* to a retrieval-grounded shopping assistant whose
 answers you can actually measure.
 
-> Built and maintained by [MEMOTECH](https://memotech.ch) — IT-Expertise seit 1998 · Swiss Based.
+> Built and maintained by [MEMOTECH](https://memotech.ch) — IT expertise since 1998 · Swiss Based.
 
 ---
 
@@ -44,6 +44,12 @@ Part 1 is built **twice** on purpose: once as a plain Python loop (so you
 see what an agent really is), then once with LangGraph (so you see what a
 framework adds). Nothing in the three parts needs a GPU — it all runs
 against a hosted API.
+
+Each part also has a companion deep-dive on *m3mo Bytes*:
+
+- Part 1 — [An AI Agent Is Just a Loop](https://mehmetgoekce.substack.com/p/an-ai-agent-is-just-a-loop)
+- Part 2 — [The Product Your Search Bar Can't Find](https://mehmetgoekce.substack.com/p/the-product-your-search-bar-cant)
+- Part 3 — [A Fluent Answer and a Correct Answer Look the Same](https://mehmetgoekce.substack.com/p/a-fluent-answer-and-a-correct-answer)
 
 ## Setup — 10 minutes
 
