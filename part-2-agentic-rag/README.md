@@ -29,8 +29,8 @@ that last word: knowing.
 
 One notebook, `01-rag-agent.ipynb`, in four steps:
 
-1. **Embed the catalogue** — every product document becomes a 1024-number
-   vector via NVIDIA's `nv-embedqa-e5-v5`, stored in a FAISS index.
+1. **Embed the catalogue** — every product document becomes a 2048-number
+   vector via NVIDIA's `nemotron-3-embed-1b`, stored in a FAISS index.
 2. **Search by meaning** — `retrieve()` embeds a query and returns the
    nearest products. One function, about ten lines.
 3. **Plain RAG** — retrieve once, paste the documents into the prompt,
@@ -49,7 +49,7 @@ The model and embedding connections both come from [`../llm.py`](../llm.py).
 
 ### One NVIDIA-specific detail
 
-`nv-embedqa-e5-v5` is an *asymmetric* retrieval model: it embeds a search
+`nemotron-3-embed-1b` is an *asymmetric* retrieval model: it embeds a search
 query differently from a stored document, and must be told which is which
 (`input_type`: `"query"` / `"passage"`). `llm.py` keeps that in
 `embed_extra_body()` and returns `{}` for providers that don't need it, so

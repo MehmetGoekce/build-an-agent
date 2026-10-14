@@ -40,7 +40,7 @@ def llm_config() -> dict[str, str]:
     return {
         "base_url": os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT),
         "api_key": _require("LLM_API_KEY"),
-        "model": os.getenv("LLM_MODEL", "nvidia/nemotron-3-nano-30b-a3b"),
+        "model": os.getenv("LLM_MODEL", "nvidia/nemotron-3.5-lightning-30b-a3b"),
     }
 
 
@@ -51,7 +51,7 @@ def embed_config() -> dict[str, str]:
             "EMBED_BASE_URL", os.getenv("LLM_BASE_URL", _NVIDIA_DEFAULT)
         ),
         "api_key": _require("EMBED_API_KEY"),
-        "model": os.getenv("EMBED_MODEL", "nvidia/nv-embedqa-e5-v5"),
+        "model": os.getenv("EMBED_MODEL", "nvidia/nemotron-3-embed-1b"),
     }
 
 
@@ -79,11 +79,12 @@ EXTRA_BODY: dict[str, object] = _extra_body()
 def embed_extra_body(input_type: str) -> dict[str, object]:
     """Provider-specific options for an embedding request (Part 2 onwards).
 
-    NVIDIA's nv-embedqa models are *asymmetric* retrieval models: a search
-    query and a stored document are embedded differently, and the model has
-    to be told which is which. Pass "passage" when you embed a catalogue
-    document and "query" when you embed a user's question. Getting this
-    wrong quietly wrecks retrieval accuracy.
+    NVIDIA's retrieval embedding models (nemotron-3-embed, nv-embedqa) are
+    *asymmetric*: a search query and a stored document are embedded
+    differently, and the model has to be told which is which. Pass
+    "passage" when you embed a catalogue document and "query" when you
+    embed a user's question. Getting this wrong quietly wrecks retrieval
+    accuracy.
 
     This option is NVIDIA-specific. Point .env at OpenAI / Ollama and it
     returns {} — their embedding models are symmetric and need no hint, so

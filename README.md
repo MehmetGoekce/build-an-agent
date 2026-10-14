@@ -69,6 +69,14 @@ chat-completions protocol. Point `.env` at OpenAI, a local
 still runs unchanged. Removing the cloud-platform lock-in is the whole
 reason this rebuild exists.
 
+**Model update (2026-10-14).** NVIDIA retired the two models this tutorial
+launched with: `nemotron-3-nano-30b-a3b` (chat) and `nv-embedqa-e5-v5`
+(embeddings) now return `410 Gone`. The defaults are now
+`nemotron-3.5-lightning-30b-a3b` and `nemotron-3-embed-1b`, and all three
+parts run end-to-end on them. If you created your `.env` before that date,
+update `LLM_MODEL` and `EMBED_MODEL` to match `.env.example`. Answers and
+scores will differ slightly from the ones quoted in the articles.
+
 ## What this tutorial shows vs. what production needs
 
 A demo proves the idea. It does **not** make the idea production-ready.

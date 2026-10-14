@@ -55,7 +55,7 @@ Expected output:
 
 ```
 Endpoint : https://integrate.api.nvidia.com/v1
-Model    : nvidia/nemotron-3-nano-30b-a3b
+Model    : nvidia/nemotron-3.5-lightning-30b-a3b
 Calling the model ...
 Reply    : connection ok
 ```
